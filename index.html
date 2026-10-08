@@ -1,0 +1,717 @@
+```html
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ilm-e-Deen | علمِ دین</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Tahoma, sans-serif;
+    background:#f5f8f2;
+    color:#183d31;
+    line-height:1.8;
+}
+
+/* HEADER */
+header{
+    background:#07543f;
+    color:white;
+    padding:15px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.2);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-icon{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#d9b85c;
+    color:#07543f;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+}
+
+.logo h1{
+    font-size:25px;
+}
+
+.logo p{
+    font-size:12px;
+    opacity:.8;
+}
+
+nav{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#e7c968;
+}
+
+/* HERO */
+.hero{
+    min-height:550px;
+    background:linear-gradient(135deg,#063e30,#0c7357);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:70px 10%;
+    overflow:hidden;
+}
+
+.hero-text{
+    max-width:700px;
+}
+
+.bismillah{
+    display:inline-block;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.3);
+    padding:8px 20px;
+    border-radius:30px;
+    margin-bottom:20px;
+}
+
+.hero h2{
+    font-family:Georgia,serif;
+    font-size:65px;
+    color:#e7ca68;
+}
+
+.hero h3{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    background:#dfbd5c;
+    color:#123d31;
+    padding:11px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn-outline{
+    background:transparent;
+    border:1px solid white;
+    color:white;
+}
+
+.moon{
+    font-size:230px;
+    opacity:.15;
+}
+
+/* SECTIONS */
+section{
+    padding:70px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:35px;
+    color:#07543f;
+}
+
+.section-title p{
+    color:#66766e;
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:22px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+    border-top:4px solid #d6b557;
+}
+
+.card h3{
+    color:#07543f;
+    margin-bottom:12px;
+}
+
+.arabic{
+    direction:rtl;
+    text-align:center;
+    font-family:serif;
+    font-size:28px;
+    color:#164f3e;
+    margin:15px 0;
+}
+
+.reference{
+    color:#777;
+    font-size:13px;
+}
+
+/* ALTERNATE SECTION */
+.alt{
+    background:#eaf2eb;
+}
+
+/* SHORTS */
+.shorts{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.short-card{
+    background:linear-gradient(135deg,#07543f,#138263);
+    color:white;
+    padding:25px;
+    border-radius:18px;
+    text-decoration:none;
+    min-height:160px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition:.3s;
+}
+
+.short-card:hover{
+    transform:translateY(-5px);
+}
+
+.play{
+    font-size:35px;
+    color:#edcf69;
+}
+
+.short-card h3{
+    color:white;
+}
+
+.short-card span{
+    opacity:.8;
+    font-size:13px;
+}
+
+/* REMINDERS */
+.reminders{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.reminder{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    border-right:5px solid #d5b458;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+}
+
+/* ABOUT */
+.about{
+    text-align:center;
+    max-width:1000px;
+    margin:auto;
+}
+
+.note{
+    background:#fff5d5;
+    padding:15px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+/* FOOTER */
+footer{
+    background:#063d30;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+footer strong{
+    color:#e4c765;
+    font-size:21px;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    header{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav{
+        justify-content:center;
+        gap:12px;
+    }
+
+    .hero{
+        text-align:center;
+        padding:60px 6%;
+    }
+
+    .hero h2{
+        font-size:48px;
+    }
+
+    .hero h3{
+        font-size:24px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .moon{
+        display:none;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    section{
+        padding:50px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+<div class="logo">
+    <div class="logo-icon">☪</div>
+    <div>
+        <h1>Ilm-e-Deen</h1>
+        <p>Islamic Knowledge Portal</p>
+    </div>
+</div>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#quran">Quran</a>
+    <a href="#hadith">Ahadith</a>
+    <a href="#shorts">Shorts</a>
+    <a href="#reminders">Reminders</a>
+    <a href="#about">About</a>
+</nav>
+
+</header>
+
+
+<!-- HOME -->
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<span class="bismillah">
+بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
+</span>
+
+<h2>Ilm-e-Deen</h2>
+
+<h3>علمِ دین — اسلامی معلومات کا خوبصورت مرکز</h3>
+
+<p>
+قرآنِ کریم، احادیثِ مبارکہ، اسلامی یاد دہانیاں
+اور اسلامی ویڈیوز ایک ہی جگہ۔
+</p>
+
+<div class="hero-buttons">
+
+<a href="#quran" class="btn">
+📖 قرآن پڑھیں
+</a>
+
+<a href="#shorts" class="btn btn-outline">
+▶️ Islamic Shorts
+</a>
+
+</div>
+
+</div>
+
+<div class="moon">
+☪
+</div>
+
+</section>
+
+
+<!-- QURAN -->
+<section id="quran">
+
+<div class="section-title">
+<h2>📖 قرآنِ کریم</h2>
+<p>منتخب قرآنی آیات</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>سورۃ البقرۃ — 2:286</h3>
+
+<p class="arabic">
+لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا
+</p>
+
+<p>
+اللہ کسی جان کو اس کی طاقت سے زیادہ تکلیف نہیں دیتا۔
+</p>
+</div>
+
+
+<div class="card">
+<h3>سورۃ الشرح — 94:5</h3>
+
+<p class="arabic">
+فَإِنَّ مَعَ الْعُسْرِ يُسْرًا
+</p>
+
+<p>
+پس بے شک مشکل کے ساتھ آسانی ہے۔
+</p>
+</div>
+
+
+<div class="card">
+<h3>سورۃ الزمر — 39:53</h3>
+
+<p class="arabic">
+إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا
+</p>
+
+<p>
+بے شک اللہ تمام گناہ بخش دیتا ہے۔
+</p>
+</div>
+
+
+<div class="card">
+<h3>سورۃ الرعد — 13:28</h3>
+
+<p class="arabic">
+أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ
+</p>
+
+<p>
+خبردار! اللہ کے ذکر ہی سے دلوں کو اطمینان ملتا ہے۔
+</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- HADITH -->
+<section id="hadith" class="alt">
+
+<div class="section-title">
+<h2>📜 احادیثِ مبارکہ</h2>
+<p>منتخب احادیث</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>نیت</h3>
+<p>
+اعمال کا دار و مدار نیتوں پر ہے۔
+</p>
+<p class="reference">
+صحیح بخاری، حدیث 1
+</p>
+</div>
+
+
+<div class="card">
+<h3>مسلمان کی پہچان</h3>
+<p>
+مسلمان وہ ہے جس کی زبان اور ہاتھ سے دوسرے مسلمان محفوظ رہیں۔
+</p>
+<p class="reference">
+صحیح بخاری، حدیث 10
+</p>
+</div>
+
+
+<div class="card">
+<h3>رحم</h3>
+<p>
+جو رحم نہیں کرتا، اس پر رحم نہیں کیا جاتا۔
+</p>
+<p class="reference">
+صحیح بخاری، حدیث 5997
+</p>
+</div>
+
+
+<div class="card">
+<h3>اچھی بات</h3>
+<p>
+جو اللہ اور آخرت کے دن پر ایمان رکھتا ہے وہ اچھی بات کہے یا خاموش رہے۔
+</p>
+<p class="reference">
+صحیح بخاری، حدیث 6018
+</p>
+</div>
+
+
+<div class="card">
+<h3>پاکیزگی</h3>
+<p>
+پاکیزگی نصف ایمان ہے۔
+</p>
+<p class="reference">
+صحیح مسلم، حدیث 223
+</p>
+</div>
+
+
+<div class="card">
+<h3>مسکراہٹ</h3>
+<p>
+اپنے بھائی کے سامنے تمہارا مسکرانا بھی صدقہ ہے۔
+</p>
+<p class="reference">
+جامع ترمذی، حدیث 1956
+</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- SHORTS -->
+<section id="shorts">
+
+<div class="section-title">
+<h2>▶️ Islamic Shorts</h2>
+<p>اسلامی ویڈیوز</p>
+</div>
+
+<div class="shorts">
+
+<a class="short-card"
+href="https://youtube.com/shorts/9xfGO2b9Bxs?si=P81iETARFLVmo4-e"
+target="_blank">
+
+<div class="play">▶</div>
+<h3>Islamic Short 01</h3>
+<span>YouTube پر دیکھیں</span>
+
+</a>
+
+
+<a class="short-card"
+href="https://youtube.com/shorts/Ar_k0vauzro?si=P81iETARFLVmo4-e"
+target="_blank">
+
+<div class="play">▶</div>
+<h3>Islamic Short 02</h3>
+<span>YouTube پر دیکھیں</span>
+
+</a>
+
+
+<a class="short-card"
+href="https://youtube.com/shorts/OzCu7hvPdOU?si=WhkJJBdJuynMGmzm"
+target="_blank">
+
+<div class="play">▶</div>
+<h3>Islamic Short 03</h3>
+<span>YouTube پر دیکھیں</span>
+
+</a>
+
+
+<a class="short-card"
+href="https://youtube.com/shorts/PpVZZP7Yr4c?si=M5riaQz2eGykaGAw"
+target="_blank">
+
+<div class="play">▶</div>
+<h3>Islamic Short 04</h3>
+<span>YouTube پر دیکھیں</span>
+
+</a>
+
+
+<a class="short-card"
+href="https://youtube.com/shorts/gfOhw1uOBl8"
+target="_blank">
+
+<div class="play">▶</div>
+<h3>Islamic Short 05</h3>
+<span>YouTube پر دیکھیں</span>
+
+</a>
+
+
+<a class="short-card"
+href="https://youtube.com/shorts/3s4pttasJKc"
+target="_blank">
+
+<div class="play">▶</div>
+<h3>Islamic Short 06</h3>
+<span>YouTube پر دیکھیں</span>
+
+</a>
+
+
+<a class="short-card"
+href="https://youtube.com/shorts/pQhAYCxzZws"
+target="_blank">
+
+<div class="play">▶</div>
+<h3>Islamic Short 07</h3>
+<span>YouTube پر دیکھیں</span>
+
+</a>
+
+
+<a class="short-card"
+href="https://youtube.com/shorts/djn9dYIL7ug"
+target="_blank">
+
+<div class="play">▶</div>
+<h3>Islamic Short 08</h3>
+<span>YouTube پر دیکھیں</span>
+
+</a>
+
+</div>
+</section>
+
+
+<!-- REMINDERS -->
+<section id="reminders" class="alt">
+
+<div class="section-title">
+<h2>🌙 اسلامی یاد دہانیاں</h2>
+<p>روزمرہ زندگی کے لیے خوبصورت پیغامات</p>
+</div>
+
+<div class="reminders">
+
+<div class="reminder">
+🌸 نماز کو اپنی زندگی کا خوبصورت معمول بنائیں۔
+</div>
+
+<div class="reminder">
+🤲 اللہ کی رحمت سے مایوس نہ ہوں۔
+</div>
+
+<div class="reminder">
+❤️ والدین کے ساتھ حسنِ سلوک کریں۔
+</div>
+
+<div class="reminder">
+📖 ہر دن قرآنِ کریم کی تلاوت کے لیے وقت نکالیں۔
+</div>
+
+</div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+<div class="about">
+
+<div class="section-title">
+<h2>☪ Ilm-e-Deen کے بارے میں</h2>
+</div>
+
+<p>
+Ilm-e-Deen ایک اسلامی ویب سائٹ ہے جہاں قرآنِ کریم،
+احادیثِ مبارکہ، اسلامی یاد دہانیاں اور Islamic Shorts
+ایک جگہ موجود ہیں۔
+</p>
+
+<div class="note">
+<strong>اہم نوٹ:</strong>
+دینی مسائل اور احادیث کے لیے مستند کتب اور اہلِ علم سے بھی تصدیق کریں۔
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<p>
+<strong>☪ Ilm-e-Deen</strong>
+</p>
+
+<p>
+علمِ دین — قرآن، حدیث اور اسلامی معلومات
+</p>
+
+<p>
+© 2026 Ilm-e-Deen. All Rights Reserved.
+</p>
+
+</footer>
+
+</body>
+</html>
+```
